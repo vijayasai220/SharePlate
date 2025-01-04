@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <foreground android:drawable="@drawable/green2">
+        <scale
+            android:scaleWidth="1.0"
+            android:scaleHeight="1.0"
+            android:gravity="center" />
+    </foreground>
+</adaptive-icon>
