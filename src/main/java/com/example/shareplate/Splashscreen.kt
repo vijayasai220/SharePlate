@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.example.shareplate
 
 import android.os.Bundle
@@ -105,3 +106,6 @@ fun SplashScreenPreview() {
         SplashScreen(onTimeout = {})
     }
 }
+=======
+// Delete this file as we already have app/src/main/java/com/example/shareplate/SplashScreen.kt
+>>>>>>> 8586894 (added map and auth)

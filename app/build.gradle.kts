@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -102,3 +103,6 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach 
         freeCompilerArgs = listOf("-Xopt-in=kotlin.RequiresOptIn")
     }
 }
+=======
+// Delete this file as we're using build.gradle
+>>>>>>> 8586894 (added map and auth)

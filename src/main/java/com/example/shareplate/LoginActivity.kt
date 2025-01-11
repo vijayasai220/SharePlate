@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.example.shareplate
 
 import androidx.compose.foundation.layout.*
@@ -175,3 +176,6 @@ fun LoginScreenPreview() {
         LoginScreen()
     }
 }
+=======
+// Delete this file as we already have the LoginScreen.kt with proper implementation
+>>>>>>> 8586894 (added map and auth)

@@ -16,6 +16,10 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+<<<<<<< HEAD
+=======
+        maven { url = uri("https://jitpack.io") }
+>>>>>>> 8586894 (added map and auth)
     }
 }
 

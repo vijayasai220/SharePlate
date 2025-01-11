@@ -1,0 +1,114 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.example.shareplate'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.shareplate"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+        
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        compose true
+        buildConfig true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.5.1'
+    }
+
+    packaging {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+            excludes += 'META-INF/DEPENDENCIES'
+            excludes += 'META-INF/LICENSE'
+            excludes += 'META-INF/LICENSE.txt'
+            excludes += 'META-INF/license.txt'
+            excludes += 'META-INF/NOTICE'
+            excludes += 'META-INF/NOTICE.txt'
+            excludes += 'META-INF/notice.txt'
+            excludes += 'META-INF/ASL2.0'
+            excludes += 'META-INF/*.kotlin_module'
+        }
+    }
+
+    lint {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+
+dependencies {
+    // Compose BOM
+    def compose_version = '1.5.4'
+    implementation platform("androidx.compose:compose-bom:2023.10.01")
+
+    // Core AndroidX and Compose
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation "androidx.compose.ui:ui:$compose_version"
+    implementation "androidx.compose.material3:material3"
+    implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.2'
+    implementation 'androidx.activity:activity-compose:1.8.1'
+
+    // Navigation
+    implementation 'androidx.navigation:navigation-compose:2.7.5'
+
+    // OSMdroid
+    implementation 'org.osmdroid:osmdroid-android:6.1.16'
+    
+    // Preference
+    implementation 'androidx.preference:preference-ktx:1.2.1'
+    
+    // Add these dependencies for OkHttp and Appwrite
+    implementation 'com.squareup.okhttp3:okhttp:4.11.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.11.0'
+    implementation('io.appwrite:sdk-for-android:4.0.1') {
+        exclude group: 'com.squareup.okhttp3', module: 'okhttp-bom'
+    }
+
+    // Coil
+    implementation 'io.coil-kt:coil-compose:2.4.0'
+
+    // Material Icons
+    implementation "androidx.compose.material:material-icons-extended:$compose_version"
+
+    // Debug
+    debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_version"
+
+    // Add these dependencies
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation "androidx.compose.ui:ui-graphics:$compose_version"
+    implementation "androidx.compose.ui:ui-util:$compose_version"
+    
+    // Add vector drawables support
+    implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
+}
